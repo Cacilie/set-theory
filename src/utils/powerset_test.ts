@@ -8,8 +8,12 @@ Deno.test("power_set function returns a set", () => {
 })
 
 Deno.test("power_set returns a set with at least 2 elements, the empty set and the set itself", () => {
-    const setA = new Set(['A', 'B']);
+    const setA = new Set();
+    setA.add("A")
+    setA.add("B")
+
     const p_of_a = power_set(setA);
+
     assertEquals(p_of_a.size >= 2, true);
     assertEquals(p_of_a.has(setA), true);
 })
@@ -18,7 +22,6 @@ Deno.test("power_set returns a set with at least n + 2 elements, where n is the 
     const setA = new Set(['A', 'B']);
     const p_of_a = power_set(setA);
     assertEquals(p_of_a.size >= 2 + setA.size, true);
-    console.log(p_of_a)
 })
 
 Deno.test("power set returns a set with at least the triangle number of n for subsets with cardinality equal to two", () =>{
