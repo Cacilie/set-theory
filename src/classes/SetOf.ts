@@ -1,3 +1,7 @@
+// deno-lint-ignore-file
+import array_to_set from "../utils/utils.ts";
+
+// deno-lint-ignore-file no-explicit-any\
 // deno-lint-ignore-file no-explicit-any
 export default class SetOf {
 
@@ -7,8 +11,9 @@ export default class SetOf {
         this.value = [...value]
     }
 
-    getValue(){
-        return new Set(this.value)
+    
+    getValue() : Set<any>{
+        return array_to_set(this.value)
     }
 
 
