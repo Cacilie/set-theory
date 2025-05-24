@@ -1,34 +1,25 @@
 // deno-lint-ignore-file
+
+import array_to_set from "./utils.ts";
+
 // deno-lint-ignore no-explicit-any
-export default function power_set(set: Set<any>) : Set<any>{
+export default function power_set(set: Set<any>): Set<any> {
 
-    const power_set = new Set();
-    
-    // P(A) always include the empty set and A.
-    power_set.add(set);
-    power_set.add(new Set());
+    let solution: any[] = [];
 
-    // O(n)
-    set.forEach( member => {
-        power_set.add(new Set(member))
+    solution.push([])
+
+    set.forEach(pivot => {
+        solution.forEach(member => {
+            let copy = member[0];
+            let tmp = [];
+            if (copy) tmp.push(copy);
+            tmp.push(pivot);
+            solution.push(tmp);
+        })
     })
-
-   
-
-    const copy_of_set = Array.from(set)
-
     
-    let pivot: any;
 
-    // O(n**2)
-    while(copy_of_set.length > 1) {
-        pivot = copy_of_set.shift();
-        copy_of_set.forEach( member => {
-            const tmpSet = new Set([ pivot, member ]);
-            power_set.add(tmpSet);
-        });
-    };
-
-    
-    return power_set;
+    return array_to_set(solution);
 }
+
