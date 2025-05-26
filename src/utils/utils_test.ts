@@ -15,5 +15,14 @@ Deno.test("array_to_set returns a set and defines the correct members", () => {
     assertEquals(set.has(1), true)
     assertEquals(set.has(2), true)
 
-    
+})
+
+
+Deno.test("array_to_set correctly converts an array with null into a set", () => {
+    const array_set: unknown[] = [];
+
+    const set = array_to_set(array_set);
+
+    assertEquals(set.size == 0, true)
+
 })

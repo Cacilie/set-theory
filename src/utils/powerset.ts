@@ -7,7 +7,7 @@ export default function power_set(set: Set<any>): Set<any> {
 
     let solution: any[] = [];
 
-    solution.push([])
+    solution.push([null])
 
     set.forEach(pivot => {
         solution.forEach(member => {
@@ -18,6 +18,7 @@ export default function power_set(set: Set<any>): Set<any> {
             solution.push(tmp);
         })
     })
+
     
 
     return array_to_set(solution);
