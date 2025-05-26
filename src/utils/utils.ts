@@ -7,18 +7,25 @@ export default function array_to_set(array_set: any[]): Set<any> {
 
     array_set.forEach(member => {
         let tmpSet = new Set();
-        if (member.length <= 1) {
-            let copy = member[0] || null
 
-            tmpSet.add(copy);
+        if(member === null){
+         final_set.add(new Set(null))   
+        }
+        else if (member.constructor !== Array) {
+            let copy = member
 
-        } else {
+            final_set.add(copy);
+
+        } else if( member.constructor === Array &&  member.length) {
             member.forEach((s_member: unknown) => {
+                if(s_member === null) {
+                    tmpSet.add(new Set(null))
+                }
                 tmpSet.add(s_member)
             })
-        }
 
-        final_set.add(tmpSet);
+            final_set.add(tmpSet);
+        }
     })
 
     return final_set;

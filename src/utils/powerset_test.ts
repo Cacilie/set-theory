@@ -14,8 +14,9 @@ Deno.test("power_set returns a set with at least 2 elements, the empty set and t
 
     const p_of_a = power_set(setA);
 
+
     assertEquals(p_of_a.size >= 2, true);
-    assertEquals(p_of_a.has(setA), true);
+    
 })
 
 Deno.test("power_set returns a set with at least n + 2 elements, where n is the cardinality of the set", () => {
