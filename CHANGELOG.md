@@ -6,8 +6,8 @@
 
 
 #  "version": "0.0.2"
-- Fix bugs on array_to_set functions.
-- Add unit testing for array_to_set
+- Fix bugs on arrayToSet functions.
+- Add unit testing for arrayToSet
 
 
 #  "version": "0.0.3-alpha"
@@ -17,3 +17,4 @@
 - Adds MIT license
 - Adds "isPartOf" functionality
 - Adds "AreArraySetsEqual functionality" 
+- Migrates to Camelcase
