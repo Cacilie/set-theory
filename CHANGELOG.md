@@ -12,3 +12,8 @@
 
 #  "version": "0.0.3-alpha"
 - Adds MIT license
+
+#  "version": "0.0.4-alpha"
+- Adds MIT license
+- Adds "isPartOf" functionality
+- Adds "AreArraySetsEqual functionality" 
