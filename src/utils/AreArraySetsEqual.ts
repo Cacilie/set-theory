@@ -1,9 +1,9 @@
-export default function AreArraySetsEqual( A : unknown[] , B : unknown[]) : boolean {
+export default function areArraySetsEqual( A : unknown[] , B : unknown[]) : boolean {
     return A.every( a => {
         if( a instanceof Array){
             return  B.some( b => {
                 if(b instanceof Array){
-                    return AreArraySetsEqual(a, b)
+                    return areArraySetsEqual(a, b)
                 }
                 return false
             })
@@ -14,7 +14,7 @@ export default function AreArraySetsEqual( A : unknown[] , B : unknown[]) : bool
         if(b instanceof Array){
             return A.some( a => {
                 if(a instanceof Array){
-                    return AreArraySetsEqual(b, a)
+                    return areArraySetsEqual(b, a)
                 }
                 return false
             })

@@ -16,5 +16,6 @@
 #  "version": "0.0.4-alpha"
 - Adds MIT license
 - Adds "isPartOf" functionality
-- Adds "AreArraySetsEqual functionality" 
+- Adds "areArraySetsEqual functionality" 
 - Migrates to Camelcase
+- Adds arraySetDifference
