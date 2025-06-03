@@ -41,3 +41,97 @@ The objective ot this library is to provide functions that not just work with th
 
 # Usage.
 
+The library provide a set of utils that can be used with sets in array-set notation. (array-set notation definition is below)
+
+Here they are some examples.
+
+*Set Difference*
+
+> Math example
+>
+>A = {1, 2, {3, 4} }
+>
+>B = {1, 2}
+>
+>A∖B = { x ∊ A ∣ x ∉ B }
+>
+>A\B = { {3, 4} }
+>
+```
+import { arraySetDifference } from "@discrete-math/set-theory";
+
+
+//basic example on deno
+if (import.meta.main) {
+
+  const A = [ 1, 2, [3, 4] ]
+  const B = [ 1, 2 ]
+
+  
+  const A_B_diff = arraySetDifference(A, B);
+
+  console.log(A_B_diff) // Output [ [ 3, 4 ] ]
+
+}
+```
+
+---
+
+*Is Part Of*
+
+>Math example
+>
+>A = {1, 2, {3, 4}}
+>C = {3, 4}
+>
+>C ∊ A
+
+
+```
+import { isPartOf } from "@discrete-math/set-theory";
+
+const A = [ 1, 2, [3, 4] ]
+const C = [3, 4]
+
+const C_member_of_A = isPartOf(C, A)
+
+console.log(C_member_of_A) // Output true
+
+```
+
+---
+*Set equality*
+
+>Math example
+>
+>S = { 1, 4, 3, {5, 6} }
+>
+>V = { {6, 5}, 4, 1, 3 }
+>
+> S = V
+
+```
+import { areArraySetsEqual } from "@discrete-math/set-theory";
+
+
+const S = [ 1, 4, 3, [5, 6] ]
+
+const V = [ [6 ,5 ], 4, 1, 3 ]
+
+const S_equal_V = areArraySetsEqual(S, V)
+
+console.log(S_equal_V) // Output true
+```
+---
+
+
+## the SetOf Object
+
+*Currently under development*
+
+---
+
+# Contributing
+
+Please read the CONTRIBUTING.md file. (under construction)
+
