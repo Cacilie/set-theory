@@ -19,3 +19,7 @@
 - Adds "areArraySetsEqual functionality" 
 - Migrates to Camelcase
 - Adds arraySetDifference
+
+
+#  "version": "0.0.5-alpha"
+- Update Readme
