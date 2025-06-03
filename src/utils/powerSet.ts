@@ -1,9 +1,9 @@
 // deno-lint-ignore-file
 
-import array_to_set from "./utils.ts";
+import arrayToSet from "./utils.ts";
 
 // deno-lint-ignore no-explicit-any
-export default function power_set(set: Set<any>): Set<any> {
+export default function powerSet(set: Set<any>): Set<any> {
 
     let solution: any[] = [];
 
@@ -21,6 +21,6 @@ export default function power_set(set: Set<any>): Set<any> {
 
     
 
-    return array_to_set(solution);
+    return arrayToSet(solution);
 }
 

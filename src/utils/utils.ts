@@ -1,7 +1,7 @@
 // deno-lint-ignore-file
 // deno-lint-ignore no-explicit-any
 
-export default function array_to_set(array_set: any[]): Set<any> {
+export default function arrayToSet(array_set: any[]): Set<any> {
 
     let final_set = new Set();
 
