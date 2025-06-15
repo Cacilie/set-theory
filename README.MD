@@ -41,7 +41,8 @@ The objective ot this library is to provide functions that not just work with th
 
 # Usage.
 
-The library provide a set of utils that can be used with sets in array-set notation. (array-set notation definition is below)
+The library provide a set of utils that can be used with sets in array_set notation. [Array_Set Notation](https://github.com/Cacilie/set-theory/wiki/array_set-Notation.)
+
 
 Here they are some examples.
 
