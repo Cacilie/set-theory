@@ -1,10 +1,15 @@
+import type { Member } from "../utils/Types.ts";
+
+
 export default class OrderedPair {
 
-    private first: unknown;
-    private second: unknown;
+    
+
+    private first: Member;
+    private second:  Member;
 
 
-    constructor(first : unknown, second: unknown){
+    constructor(first : Member, second: Member){
         this.first = first;
         this.second = second;
     }
@@ -14,11 +19,11 @@ export default class OrderedPair {
         return Object.freeze([this.first, this.second])
     }
 
-    getFirst(){
+    getFirst() : Member {
         return this.first
     }
     
-    getSecond(){
+    getSecond() : Member{
         return this.second
     }
     
