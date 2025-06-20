@@ -1,33 +1,23 @@
 // deno-lint-ignore-file
 // deno-lint-ignore no-explicit-any
 
-export default function arrayToSet(array_set: any[]): Set<any> {
 
-    let final_set = new Set();
-
-    array_set.forEach(member => {
-        let tmpSet = new Set();
-
-        if(member === null){
-         final_set.add(new Set(null))   
-        }
-        else if (member.constructor !== Array) {
-            let copy = member
-
-            final_set.add(copy);
-
-        } else if( member.constructor === Array &&  member.length) {
-            member.forEach((s_member: unknown) => {
-                if(s_member === null) {
-                    tmpSet.add(new Set(null))
-                }
-                tmpSet.add(s_member)
-            })
-
-            final_set.add(tmpSet);
+const recursiveTransform = (array_set : unknown[]) : Set<unknown> => {
+    let set = new Set();
+    array_set.forEach( member => {
+        if(member instanceof Array){
+            set.add(recursiveTransform(member))
+        }else{
+            set.add(member)
         }
     })
 
-    return final_set;
+    return set
+}
 
+export default function arrayToSet(array_set: unknown[]): Set<unknown> {
+    
+    let set = recursiveTransform(array_set)
+    
+    return set
 }

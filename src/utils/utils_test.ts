@@ -6,6 +6,21 @@ Deno.test("arrayToSet returns set with same size as original array", () => {
     assertEquals(arrayToSet(array_set).size, array_set.length)
 })
 
+Deno.test("arrayToSet returns set rank 3 with same size as original array and correctly transofmed", () => {
+    
+    const array_set = [1, 2, [3, [4, 5] ] ]
+    const set = arrayToSet(array_set)
+    let lastElement;
+    for(lastElement of set);
+
+    assertEquals(set.size, array_set.length)
+    assertEquals((lastElement as Set<unknown>).size, 2)
+    assertEquals((lastElement as Set<unknown>).values().next().value, 3)
+
+
+})
+
+
 Deno.test("arrayToSet returns a set and defines the correct members", () => {
 
     const array_set = [1, 2];
