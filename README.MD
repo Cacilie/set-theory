@@ -41,10 +41,13 @@ The objective ot this library is to provide functions that not just work with th
 
 # Usage.
 
-The library provide a set of utils that can be used with sets in array_set notation. [Array_Set Notation](https://github.com/Cacilie/set-theory/wiki/array_set-Notation.)
+The library provide the SetOf class. A class that can be used to create discrete math set objects and manipulate them through set operations. 
 
 
-Here they are some examples.
+Also, this library provides a set of utils that can directly be used with sets in array_set notation. [Array_Set Notation](https://github.com/Cacilie/set-theory/wiki/array_set-Notation.) But I highly recommend ratter using the SetOf class as I will do all the effort to avoid breaking changes within it. Say the SetOf class is a class to implement the utils in a consistent way. I added to Utils for flexibility.
+
+
+Here they are some examples of the utils.
 
 *Set Difference*
 

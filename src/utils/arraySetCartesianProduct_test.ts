@@ -3,7 +3,6 @@ import arraySetCartesianProduct from "./arraySetCartesianProduct.ts";
 import { assertInstanceOf } from "@std/assert/instance-of";
 import OrderedPair from "../classes/OrderedPair.ts";
 import { assertEquals } from "@std/assert/equals";
-import type { Member } from "./Types.ts";
 
 
 Deno.test("the cartesian product of  [1, 2] X [3, 4] is [ (1, 3), (1, 4), (2, 3), (2, 4) ]", () => {

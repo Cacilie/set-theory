@@ -1,15 +1,15 @@
-import type { Member } from "../utils/Types.ts";
+// deno-lint-ignore-file no-explicit-any
 
 
 export default class OrderedPair {
 
     
 
-    private first: Member;
-    private second:  Member;
+    private first: any;
+    private second:  any;
 
 
-    constructor(first : Member, second: Member){
+    constructor(first : any, second: any){
         this.first = first;
         this.second = second;
     }
@@ -19,11 +19,11 @@ export default class OrderedPair {
         return Object.freeze([this.first, this.second])
     }
 
-    getFirst() : Member {
+    getFirst() : any {
         return this.first
     }
     
-    getSecond() : Member{
+    getSecond() : any{
         return this.second
     }
     
