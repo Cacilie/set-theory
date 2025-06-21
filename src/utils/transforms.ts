@@ -1,10 +1,10 @@
-// deno-lint-ignore-file
-// deno-lint-ignore no-explicit-any
+
+import  type { SetType } from "../model/SetType.ts";
 
 
-const recursiveTransformArrayToSet = (array_set : unknown[]) : Set<unknown> => {
-    let set = new Set();
-    array_set.forEach( member => {
+function recursiveTransformArrayToSet<T>(array_set : SetType<T>) : Set<T> {
+    const set  = new Set();
+    array_set.forEach( (member : T) => {
         if(member instanceof Array){
             set.add(recursiveTransformArrayToSet(member))
         }else{
@@ -12,13 +12,13 @@ const recursiveTransformArrayToSet = (array_set : unknown[]) : Set<unknown> => {
         }
     })
 
-    return set
+    return set as Set<T>
 }
 
-const recursiveTransformSetToArray = (set: Set<unknown>) :  Array<unknown> => {
-    let arraySet = new Array();
+function recursiveTransformSetToArray<T>(set: Set<T>) :  SetType<T> {
+    const arraySet = [];
 
-    let setValues = set.values()
+    const setValues = set.values()
 
     let nextValues = setValues.next();
 
@@ -32,18 +32,18 @@ const recursiveTransformSetToArray = (set: Set<unknown>) :  Array<unknown> => {
         nextValues = setValues.next()
     }
 
-    return arraySet;
+    return arraySet as SetType<T>;
     
 
 }
 
-function arrayToSet(array_set: unknown[]): Set<unknown> {
+function arrayToSet<T>(array_set: SetType<T>): Set<T> {
     return recursiveTransformArrayToSet(array_set)
 }
 
 
-function setToArray( set: Set<unknown> ) : Array<unknown> {
-    return recursiveTransformSetToArray(set)
+function setToArray<T>( set: Set<T> ) : SetType<T> {
+    return recursiveTransformSetToArray<T>(set)
 }
 
 

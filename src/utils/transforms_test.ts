@@ -1,5 +1,5 @@
 import { assertArrayIncludes } from "@std/assert/array-includes";
-import {arrayToSet, setToArray} from "./utils.ts";
+import {arrayToSet, setToArray} from "./transforms.ts";
 import { assertEquals } from "@std/assert/equals";
 import { assertInstanceOf } from "@std/assert";
 
@@ -14,10 +14,11 @@ Deno.test("arrayToSet returns set rank 3 with same size as original array and co
     const set = arrayToSet(array_set)
     let lastElement;
     for(lastElement of set);
+    
 
     assertEquals(set.size, array_set.length)
-    assertEquals((lastElement as Set<unknown>).size, 2)
-    assertEquals((lastElement as Set<unknown>).values().next().value, 3)
+    assertEquals((lastElement as unknown as Set<unknown>).size, 2)
+    assertEquals((lastElement as unknown as Set<unknown>).values().next().value, 3)
 
 
 })

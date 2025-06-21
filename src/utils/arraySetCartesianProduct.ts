@@ -1,12 +1,12 @@
-// deno-lint-ignore-file no-explicit-any
 import OrderedPair from "../classes/OrderedPair.ts";
+import type { SetType } from "../model/SetType.ts";
 
-export default function arraySetCartesianProduct( setA : unknown[], setB : unknown[] ) : OrderedPair[] {
+export default function arraySetCartesianProduct<T>( setA : SetType<T>, setB : SetType<T> ) : OrderedPair[] {
 
     const cartesianProduct : OrderedPair[] = []
 
-    setA.forEach((memberOfA : any) => {
-        setB.forEach((memberOfB : any) => {
+    setA.forEach((memberOfA : T) => {
+        setB.forEach((memberOfB : T) => {
             const pair = new OrderedPair(memberOfA, memberOfB)
             cartesianProduct.push(pair);
         })
