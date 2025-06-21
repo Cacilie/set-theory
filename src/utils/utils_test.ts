@@ -1,5 +1,7 @@
-import arrayToSet from "./utils.ts";
+import { assertArrayIncludes } from "@std/assert/array-includes";
+import {arrayToSet, setToArray} from "./utils.ts";
 import { assertEquals } from "@std/assert/equals";
+import { assertInstanceOf } from "@std/assert";
 
 Deno.test("arrayToSet returns set with same size as original array", () => {
     const array_set = [1, 2, [3, 4]]
@@ -40,4 +42,38 @@ Deno.test("arrayToSet correctly converts an array with null into a set", () => {
 
     assertEquals(set.size == 0, true)
 
+})
+
+Deno.test("Set(2) {1, 2} gets transform into [1, 2]", () => {
+    const set = new Set([1, 2])
+    const arraySet = setToArray(set)
+    assertArrayIncludes(arraySet, [1, 2])
+})
+
+
+Deno.test("Set(2) {1, 2, Set(2) {3, 4}  } gets transform into [1, 2, [3, 4]]", () => {
+    const set : Set<unknown> = new Set([1, 2])
+    const subSet = new Set([3, 4])
+    set.add(subSet)
+    const array_set = setToArray(set)
+
+    assertArrayIncludes(array_set, [1, 2])
+    assertInstanceOf(array_set[2], Array)
+    assertArrayIncludes(array_set[2], [3, 4])
+})
+
+
+Deno.test("Set(2) {1, 2, Set(2) {3, Set(1){5} }  } gets transform into [1, 2, [3, 4, [5]]]", () => {
+    const set : Set<unknown> = new Set([1, 2])
+    const subSet : Set<unknown> = new Set([3, 4])
+    const thirdSet = new Set([5])
+    subSet.add(thirdSet)
+    set.add(subSet)
+    const array_set = setToArray(set)
+
+    assertArrayIncludes(array_set, [1, 2])
+    assertInstanceOf(array_set[2], Array)
+    assertArrayIncludes(array_set[2], [3, 4])
+    assertArrayIncludes(array_set[2][2] as Array<unknown>, [5])
+    console.log(array_set)
 })
