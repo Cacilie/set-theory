@@ -24,3 +24,5 @@
 #  "version": "0.0.5-alpha"
 - Update Readme
 - SetOperations abstract class with all the utils implemented
+- Test Coverage up to 100%
+- Refactor to avoid the use of any or unknown TS types.
