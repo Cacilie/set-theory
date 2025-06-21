@@ -1,5 +1,5 @@
 import type { SetType } from "../model/SetType.ts";
-import isPartOf from "./isPartOf.ts";
+import isPartOf from "./isArraySetPartOf.ts";
 
 export default function arraySetUnion<T>(a: SetType<T>, b: SetType<T>){
 

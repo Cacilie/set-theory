@@ -4,9 +4,8 @@ import arraySetCartesianProduct from "../utils/arraySetCartesianProduct.ts";
 import arraySetDifference from "../utils/arraySetDifference.ts";
 import arraySetIntersection from "../utils/arraySetIntersection.ts";
 import arraySetUnion from "../utils/arraySetUnion.ts";
-import isPartOf from "../utils/isPartOf.ts";
+import IsArraySetPartOf from "../utils/isArraySetPartOf.ts";
 import powerSet from "../utils/powerSet.ts";
-import { arrayToSet } from "../utils/transforms.ts";
 import type  OrderedPair from "./OrderedPair.ts";
 
 export default abstract class SetOperations {
@@ -32,7 +31,7 @@ export default abstract class SetOperations {
     }
 
     static isSetPartOf<T>(a : T | SetType<T>, b: SetType<T>) : boolean {
-        return isPartOf(a, b)
+        return IsArraySetPartOf(a, b)
     }
 
     static powerSet<T>(a: SetType<T>) : SetType<T>{

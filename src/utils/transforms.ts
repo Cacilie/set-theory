@@ -15,7 +15,7 @@ function recursiveTransformArrayToSet<AT, ST>(array_set : SetType<AT>) : Set<ST>
     return set as Set<ST>
 }
 
-function recursiveTransformSetToArray<T>(set: Set<T>) :  SetType<T> {
+function recursiveTransformSetToArray<ST, AT>(set: Set<ST>) :  SetType<AT> {
     const arraySet = [];
 
     const setValues = set.values()
@@ -32,7 +32,7 @@ function recursiveTransformSetToArray<T>(set: Set<T>) :  SetType<T> {
         nextValues = setValues.next()
     }
 
-    return arraySet as SetType<T>;
+    return arraySet as SetType<AT>;
     
 
 }
@@ -42,8 +42,8 @@ function arrayToSet<AT, ST>(array_set: SetType<AT>): Set<ST> {
 }
 
 
-function setToArray<T>( set: Set<T> ) : SetType<T> {
-    return recursiveTransformSetToArray<T>(set)
+function setToArray<ST, AT>( set: Set<ST> ) : SetType<AT> {
+    return recursiveTransformSetToArray<ST, AT>(set)
 }
 
 
