@@ -1,5 +1,6 @@
-import isPartOf from "./isPartOf.ts";
+import type { SetType } from "../model/SetType.ts";
+import IsArraySetPartOf from "./isArraySetPartOf.ts";
 
-export default function arraySetIntersection(a : unknown[], b: unknown[]) : unknown[] {
-    return a.filter( member => isPartOf(member, b))
+export default function arraySetIntersection<T>(a : SetType<T>, b: SetType<T>) : SetType<T> {
+    return a.filter( member => IsArraySetPartOf(member, b))
 }

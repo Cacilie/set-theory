@@ -31,6 +31,6 @@ Deno.test(" [1, [2, 4]] intersection [1, [4 , 2]] = [1, [2, 4]] ", () => {
     const intersection = arraySetIntersection(a, b)
     assertArrayIncludes(intersection, [1])
     assertEquals(intersection.length, 2)
-    assertArrayIncludes(intersection[1] as Array<unknown>, [2 , 4])
+    assertArrayIncludes(intersection[1] as Array<number>, [2 , 4])
 
 })

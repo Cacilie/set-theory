@@ -1,16 +1,13 @@
 import SetOf from "./classes/SetOf.ts";
-import areArraySetsEqual from "./utils/areArraySetsEqual.ts";
-import arraySetDifference from "./utils/arraySetDifference.ts";
-import isPartOf from "./utils/isPartOf.ts";
-import powerSet from "./utils/powerSet.ts";
-import { arrayToSet } from "./utils/utils.ts";
+import SetOperations from "./classes/SetOperations.ts";
+import type { SetType } from "./model/SetType.ts";
+
 
 export default SetOf;
 
 export {
-    powerSet,
-    isPartOf,
-    areArraySetsEqual,
-    arrayToSet,
-    arraySetDifference,
-};
+    SetOperations,
+    type SetType
+}
+
+

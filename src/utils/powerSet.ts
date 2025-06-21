@@ -1,18 +1,16 @@
-// deno-lint-ignore-file
 
-import {arrayToSet} from "./utils.ts";
+import type { SetType } from "../index.ts";
 
-// deno-lint-ignore no-explicit-any
-export default function powerSet(set: Set<any>): Set<any> {
+export default function powerSet<T>(set: SetType<T>): SetType<T> {
 
-    let solution: any[] = [];
+    const solution :  Array<T[] | null[]> = []
 
     solution.push([null])
 
     set.forEach(pivot => {
         solution.forEach(member => {
-            let copy = member[0];
-            let tmp = [];
+            const copy = (member as Array<T> )[0];
+            const tmp = [];
             if (copy) tmp.push(copy);
             tmp.push(pivot);
             solution.push(tmp);
@@ -21,6 +19,6 @@ export default function powerSet(set: Set<any>): Set<any> {
 
     
 
-    return arrayToSet(solution);
+    return solution as SetType<T>;
 }
 
