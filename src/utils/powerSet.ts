@@ -1,6 +1,6 @@
 // deno-lint-ignore-file
 
-import arrayToSet from "./utils.ts";
+import {arrayToSet} from "./utils.ts";
 
 // deno-lint-ignore no-explicit-any
 export default function powerSet(set: Set<any>): Set<any> {

@@ -1,5 +1,5 @@
 // deno-lint-ignore-file
-import arrayToSet from "../utils/utils.ts";
+import { arrayToSet } from "../utils/utils.ts";
 
 // deno-lint-ignore-file no-explicit-any\
 // deno-lint-ignore-file no-explicit-any
