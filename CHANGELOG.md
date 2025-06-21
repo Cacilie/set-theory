@@ -23,3 +23,4 @@
 
 #  "version": "0.0.5-alpha"
 - Update Readme
+- SetOperations abstract class with all the utils implemented
