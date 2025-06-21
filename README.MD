@@ -3,13 +3,21 @@
 This library attempts to create a set of utils to apply set theory on JS/TS. (pun intended).
 
 ---
+# Motivation.
 
 Currently, Vanilla JS includes the Set Object  with some methods to do operations. But this methods stop workking properly when the rank of a set is greater than 1.
 
 e.g.
-With a set such that S = { 1 , {2}}
+With sets such that:
 
-The objective ot this library is to provide functions that not just work with the usual sets but also with those sets described above.
+S = { 1 , {2} }
+
+S = { 1 , {2, { 3, {4} } } }
+
+In other words. Vanilla JS fails when applying the operations to sets that have sets within.
+
+
+The objective ot this library is to provide functions that not just work with the basic sets but also with those sets described above.
 
 ---
 
@@ -112,24 +120,22 @@ SetOperations.isSetPartOf([1], [1, 2, [1]]) // true
 
 ## PowerSet
 ```ts
-const setB = ['A', 'B', 'C', 'D'];
-const p_of_b =  SetOperations.powerSet(setB);
-
-
+const setB = ['1', '2', '3'];
+const p_of_b = powerSet(setB);
 ```
 
 Output
 
 ```
 [
-  [ null ],     [ "A" ],
-  [ "B" ],      [ "A", "B" ],
-  [ "C" ],      [ "A", "C" ],
-  [ "B", "C" ], [ "A", "C" ],
-  [ "D" ],      [ "A", "D" ],
-  [ "B", "D" ], [ "A", "D" ],
-  [ "C", "D" ], [ "A", "D" ],
-  [ "B", "D" ], [ "A", "D" ]
+  [],
+  [ "1" ],
+  [ "2" ],
+  [ "1", "2" ],
+  [ "3" ],
+  [ "1", "3" ],
+  [ "2", "3" ],
+  [ "1", "2", "3" ]
 ]
 ```
 
