@@ -2,9 +2,9 @@
 import  type { SetType } from "../model/SetType.ts";
 
 
-function recursiveTransformArrayToSet<T>(array_set : SetType<T>) : Set<T> {
+function recursiveTransformArrayToSet<AT, ST>(array_set : SetType<AT>) : Set<ST> {
     const set  = new Set();
-    array_set.forEach( (member : T) => {
+    array_set.forEach( (member : AT) => {
         if(member instanceof Array){
             set.add(recursiveTransformArrayToSet(member))
         }else{
@@ -12,7 +12,7 @@ function recursiveTransformArrayToSet<T>(array_set : SetType<T>) : Set<T> {
         }
     })
 
-    return set as Set<T>
+    return set as Set<ST>
 }
 
 function recursiveTransformSetToArray<T>(set: Set<T>) :  SetType<T> {
@@ -37,7 +37,7 @@ function recursiveTransformSetToArray<T>(set: Set<T>) :  SetType<T> {
 
 }
 
-function arrayToSet<T>(array_set: SetType<T>): Set<T> {
+function arrayToSet<AT, ST>(array_set: SetType<AT>): Set<ST> {
     return recursiveTransformArrayToSet(array_set)
 }
 

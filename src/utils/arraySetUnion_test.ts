@@ -29,6 +29,6 @@ Deno.test("[1, 2, [3, 4]] U [[3, 4]] = [1, 2, [3, 4]]", () => {
     const aUnionb = arraySetUnion(a, b)
 
     assertArrayIncludes(aUnionb, [1, 2])
-    assertArrayIncludes(aUnionb[2] as Array<unknown>, [3, 4])
+    assertArrayIncludes(aUnionb[2] as Array<number>, [3, 4])
     assertEquals(aUnionb.length, 3)
 })

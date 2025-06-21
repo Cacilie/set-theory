@@ -15,7 +15,7 @@ export default abstract class SetOperations {
         return areArraySetsEqual(a ,b)
     }
 
-    static cartesianProduct<T>(a: SetType<T>, b : SetType<T>): OrderedPair[] {
+    static cartesianProduct<T>(a: SetType<T>, b : SetType<T>): OrderedPair<T>[] {
         return arraySetCartesianProduct<T>(a, b)
     }
 
@@ -35,8 +35,7 @@ export default abstract class SetOperations {
         return isPartOf(a, b)
     }
 
-    static powerSet<T>(a: SetType<T>) : Set<T>{
-        const set = arrayToSet(a)
-        return powerSet(set)
+    static powerSet<T>(a: SetType<T>) : SetType<T>{
+        return powerSet(a)
     }
 }

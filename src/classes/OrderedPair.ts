@@ -1,15 +1,14 @@
-// deno-lint-ignore-file no-explicit-any
 
-
-export default class OrderedPair {
+export default class OrderedPair<T> {
 
     
+    
 
-    private first: any;
-    private second:  any;
+    private first: T | T[];
+    private second:   T | T[];
 
 
-    constructor(first : any, second: any){
+    constructor(first : T | T[], second: T | T[]){
         this.first = first;
         this.second = second;
     }
@@ -19,11 +18,11 @@ export default class OrderedPair {
         return Object.freeze([this.first, this.second])
     }
 
-    getFirst() : any {
+    getFirst() : T | T[] {
         return this.first
     }
     
-    getSecond() : any{
+    getSecond() : T | T[]{
         return this.second
     }
     

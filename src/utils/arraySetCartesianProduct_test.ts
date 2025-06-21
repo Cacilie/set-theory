@@ -42,15 +42,15 @@ Deno.test("the cartesian product of  [1, [2, 5] ] X [3, 4] is [ (1, 3), (1, 4), 
     assertEquals(cartesianProduct[1].getSecond(), 4)
 
 
-    const thirdPair : OrderedPair = cartesianProduct[2]
-    assertEquals((thirdPair.getFirst() as unknown[])[0], 2)
-    assertEquals((thirdPair.getFirst() as unknown[])[1], 5)
+    const thirdPair : OrderedPair<number | number[]> = cartesianProduct[2]
+    assertEquals((thirdPair.getFirst() as number[] )[0], 2)
+    assertEquals((thirdPair.getFirst() as number[])[1], 5)
     assertEquals(thirdPair.getSecond(), 3)
 
 
-    const fourthPair : OrderedPair = cartesianProduct[3]
-    assertEquals((fourthPair.getFirst() as unknown[])[0], 2)
-    assertEquals((fourthPair.getFirst() as unknown[])[1], 5)
+    const fourthPair : OrderedPair<number | number[]> = cartesianProduct[3]
+    assertEquals((fourthPair.getFirst() as number[])[0], 2)
+    assertEquals((fourthPair.getFirst() as number[])[1], 5)
     assertEquals(fourthPair.getSecond(), 4)
 
 

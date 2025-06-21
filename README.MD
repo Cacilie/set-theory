@@ -44,96 +44,10 @@ The objective ot this library is to provide functions that not just work with th
 The library provide the SetOf class. A class that can be used to create discrete math set objects and manipulate them through set operations. 
 
 
-Also, this library provides a set of utils that can directly be used with sets in array_set notation. [Array_Set Notation](https://github.com/Cacilie/set-theory/wiki/array_set-Notation.) But I highly recommend ratter using the SetOf class as I will do all the effort to avoid breaking changes within it. Say the SetOf class is a class to implement the utils in a consistent way. I added to Utils for flexibility.
+Also, this library provides the SetOperations abstract class. The abstract class is a set of utils that can directly be used with sets in array_set notation. [Array_Set Notation](https://github.com/Cacilie/set-theory/wiki/array_set-Notation.) But I highly recommend ratter using the SetOf class.
 
 
-Here they are some examples of the utils.
 
-*Set Difference*
-
-> Math example
->
->A = {1, 2, {3, 4} }
->
->B = {1, 2}
->
->A∖B = { x ∊ A ∣ x ∉ B }
->
->A\B = { {3, 4} }
->
-```
-import { arraySetDifference } from "@discrete-math/set-theory";
-
-
-//basic example on deno
-if (import.meta.main) {
-
-  const A = [ 1, 2, [3, 4] ]
-  const B = [ 1, 2 ]
-
-  
-  const A_B_diff = arraySetDifference(A, B);
-
-  console.log(A_B_diff) // Output [ [ 3, 4 ] ]
-
-}
-```
-
----
-
-*Is Part Of*
-
->Math example
->
->A = {1, 2, {3, 4}}
->C = {3, 4}
->
->C ∊ A
-
-
-```
-import { isPartOf } from "@discrete-math/set-theory";
-
-const A = [ 1, 2, [3, 4] ]
-const C = [3, 4]
-
-const C_member_of_A = isPartOf(C, A)
-
-console.log(C_member_of_A) // Output true
-
-```
-
----
-*Set equality*
-
->Math example
->
->S = { 1, 4, 3, {5, 6} }
->
->V = { {6, 5}, 4, 1, 3 }
->
-> S = V
-
-```
-import { areArraySetsEqual } from "@discrete-math/set-theory";
-
-
-const S = [ 1, 4, 3, [5, 6] ]
-
-const V = [ [6 ,5 ], 4, 1, 3 ]
-
-const S_equal_V = areArraySetsEqual(S, V)
-
-console.log(S_equal_V) // Output true
-```
----
-
-
-## the SetOf Object
-
-*Currently under development*
-
----
 
 # Contributing
 
