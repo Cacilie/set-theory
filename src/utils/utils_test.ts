@@ -75,5 +75,4 @@ Deno.test("Set(2) {1, 2, Set(2) {3, Set(1){5} }  } gets transform into [1, 2, [3
     assertInstanceOf(array_set[2], Array)
     assertArrayIncludes(array_set[2], [3, 4])
     assertArrayIncludes(array_set[2][2] as Array<unknown>, [5])
-    console.log(array_set)
 })
