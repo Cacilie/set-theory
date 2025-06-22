@@ -1,6 +1,6 @@
 import { assertArrayIncludes } from "@std/assert/array-includes";
-import arraySetIntersection from "./arraySetIntersection.ts";
 import { assertEquals } from "@std/assert/equals";
+import { arraySetIntersection } from "./index.ts";
 
 Deno.test(" [1] intersection [1, 2] = [1] ", () => {
     const a = [1];

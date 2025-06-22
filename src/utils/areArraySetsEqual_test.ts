@@ -1,5 +1,5 @@
 import { assertEquals } from "@std/assert/equals";
-import areArraySetsEqual from "./areArraySetsEqual.ts";
+import { areArraySetsEqual } from "./index.ts";
 
 Deno.test( "[1, 2] is equal to [1,2]", () => {
     const a = [1, 2]

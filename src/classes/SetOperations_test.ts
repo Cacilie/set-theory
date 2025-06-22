@@ -1,5 +1,5 @@
 import { assertArrayIncludes, assertEquals } from "@std/assert";
-import { SetOperations } from "../index.ts";
+import { SetOperations } from "./index.ts";
 
 
 Deno.test("[1, 2] and [2, 1] are equal", () => {

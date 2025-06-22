@@ -26,3 +26,9 @@
 - SetOperations abstract class with all the utils implemented
 - Test Coverage up to 100%
 - Refactor to avoid the use of any or unknown TS types.
+- Refactor imports
+- Add index.ts on each "module"
+- Functional SetOf Objects.
+- Use of generic types.
+- new types exported.
+- new class ordered pair exported.

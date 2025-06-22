@@ -1,14 +1,14 @@
+import type { SetType } from "../model/index.ts";
+import { IsArraySetPartOf } from "./index.ts";
 
-import type { SetType } from "../index.ts";
-import IsArraySetPartOf from "./isArraySetPartOf.ts";
 
-export default function powerSet<T>(set: SetType<T>): SetType<T> {
+export function powerSet<T>(set: SetType<T>): SetType<T[]> {
 
     const solution :  Array<T[]> = []
 
     solution.push([])
 
-    set.forEach(pivot => {
+    set.forEach((pivot) => {
         solution.forEach(member => {
             const copy = (member as Array<T> )
             let tmp : T[] = [];
@@ -20,6 +20,6 @@ export default function powerSet<T>(set: SetType<T>): SetType<T> {
 
     
 
-    return solution as SetType<T>;
+    return solution;
 }
 

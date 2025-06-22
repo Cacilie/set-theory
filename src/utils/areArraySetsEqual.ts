@@ -1,6 +1,6 @@
-import type { SetType } from "../index.ts";
+import type { SetType } from "../model/index.ts";
 
-export default function areArraySetsEqual<T>( A : SetType<T> , B : SetType<T>) : boolean {
+export function areArraySetsEqual<T>( A : SetType<T> , B : SetType<T>) : boolean {
     return A.every( a => {
         if( a instanceof Array){
             return  B.some( b => {

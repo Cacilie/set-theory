@@ -5,7 +5,7 @@ This library attempts to create a set of utils to apply set theory on JS/TS. (pu
 ---
 # Motivation.
 
-Currently, Vanilla JS includes the Set Object  with some methods to do operations. But this methods stop workking properly when the rank of a set is greater than 1.
+Currently, Vanilla JS includes the Set Object  with some methods to do set operations. But this methods stop working properly when the rank of a set is greater than 1.
 
 e.g.
 With sets such that:
@@ -17,7 +17,7 @@ S = { 1 , {2, { 3, {4} } } }
 In other words. Vanilla JS fails when applying the operations to sets that have sets within.
 
 
-The objective ot this library is to provide functions that not just work with the basic sets but also with those sets described above.
+The objective of this library is to provide functions that work with the basic sets but also with those sets described above.
 
 ---
 
@@ -52,9 +52,67 @@ The objective ot this library is to provide functions that not just work with th
 The library provide the SetOf class. A class that can be used to create discrete math set objects and manipulate them through set operations. 
 
 
-WIP
+## Set Equality
+```ts
+const p = new SetOf([1, 2]).isEqualTo(new SetOf([2, 1]));
+//p is true. Returns a boolean.
+```
 
+## Cartesian Product
+```ts
+const a = [ 1, [2, 5] ]
+const b = [ 3, 4 ]
 
+const cartesianProduct = new SetOf(a).cartesianProduct(new SetOf(b)) 
+// returns a SetOf object.
+```
+
+## Set Difference
+```ts
+const difference = new SetOf([1, [2]]).difference(new SetOf([2]))
+// returns a SetOf object.
+```
+
+## Intersection
+```ts
+const a = [1, [2]];
+const b = [1, 2];
+
+const intersection = new SetOf(a).intersection(new SetOf(b))
+// returns a SetOf object.
+```
+
+## Union
+```ts
+const a = [1, 2, [3, 4]]
+const b = [[3, 4]]
+
+const aUnionb = new SetOf(a).union(new SetOf(b))
+// returns a SetOf object.
+```
+
+## Powerset
+```ts
+const setB = new SetOf(['A', 'B', 'C', 'D']);
+
+const p_of_b = setB.powerSet()
+// returns a SetOf object.
+```
+
+## Cardinality
+```ts
+const cardinality = new SetOf([1, 2, 3, 4]).cardinality
+// returns a number
+```
+
+## Get Value
+Gets the values of the set in [Array_Set Notation](https://github.com/Cacilie/set-theory/wiki/array_set-Notation.)
+
+```ts
+new SetOf([1, 2, 3, 4]).getValue()
+// [1, 2, 3, 4]
+```
+---
 
 Also, this library provides the SetOperations abstract class. The abstract class is a set of utils that can directly be used with sets in array_set notation. [Array_Set Notation](https://github.com/Cacilie/set-theory/wiki/array_set-Notation.) But I highly recommend ratter using the SetOf class.
 

@@ -1,6 +1,6 @@
-import { assertArrayIncludes, assertEquals, assertInstanceOf } from "@std/assert";
+import { assertEquals, assertInstanceOf } from "@std/assert";
+import { powerSet } from "./index.ts";
 
-import powerSet from './powerSet.ts'
 
 Deno.test("powerSet function returns a set", () => {
     const setA = ['A', 'B'];
@@ -47,13 +47,13 @@ Deno.test("V = [A, B, C, C]; P(V) is correct ", () => {
     const p_of_b = powerSet(setB);
 
     assertEquals(p_of_b[0].length, 0)
-    const elementOfSize1 = p_of_b.filter( member => member.length === 1)
+    const elementOfSize1 = p_of_b.filter( (member) => member.length === 1)
     assertEquals(elementOfSize1.length, 4)
 
-    const elementOfSize2 = p_of_b.filter( member => member.length === 2)
+    const elementOfSize2 = p_of_b.filter( (member) => member.length === 2)
     assertEquals(elementOfSize2.length, 6)
 
-    const elementOfSize3 = p_of_b.filter( member => member.length === 3)
+    const elementOfSize3 = p_of_b.filter( (member) => member.length === 3)
     assertEquals(elementOfSize3.length, 4)
 })
 

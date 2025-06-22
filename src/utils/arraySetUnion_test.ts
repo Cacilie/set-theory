@@ -1,6 +1,6 @@
 import { assertArrayIncludes } from "@std/assert/array-includes";
-import arraySetUnion from "./arraySetUnion.ts";
 import { assertEquals } from "@std/assert/equals";
+import { arraySetUnion } from "./index.ts";
 
 Deno.test("[1 ,2] U [3, 4] = [1, 2 ,3, 4]", () => {
     const a = [1, 2]

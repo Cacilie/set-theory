@@ -1,6 +1,6 @@
 import { assertArrayIncludes } from "@std/assert/array-includes";
 import { assertEquals } from "@std/assert/equals";
-import arraySetDifference from "./arraySetDifference.ts";
+import { arraySetDifference } from "./index.ts";
 
 Deno.test( "[1, 2] - [2] = [1]", () =>  {
     assertArrayIncludes(arraySetDifference([1, 2], [2]), [1])

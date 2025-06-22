@@ -1,7 +1,7 @@
 import { assertArrayIncludes } from "@std/assert/array-includes";
-import {arrayToSet, setToArray} from "./transforms.ts";
 import { assertEquals } from "@std/assert/equals";
 import { assertInstanceOf } from "@std/assert";
+import { arrayToSet, setToArray } from "./index.ts";
 
 Deno.test("arrayToSet returns set with same size as original array", () => {
     const array_set = [1, 2, [3, 4]]
