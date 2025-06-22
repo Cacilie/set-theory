@@ -1,6 +1,6 @@
-import areArraySetsEqual from "./areArraySetsEqual.ts";
+import { areArraySetsEqual } from "./index.ts";
 
-export default function IsArraySetPartOf<T>(A: T | T[], B: T[]): boolean {
+export function IsArraySetPartOf<T>(A: T | T[], B: T[]): boolean {
 
     return B.some( m_b => {
         

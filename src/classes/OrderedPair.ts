@@ -1,5 +1,5 @@
 
-export default class OrderedPair<T> {
+export class OrderedPair<T> {
 
     
     

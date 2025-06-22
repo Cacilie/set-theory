@@ -1,14 +1,9 @@
-import type { SetType } from "../model/SetType.ts";
-import areArraySetsEqual from "../utils/areArraySetsEqual.ts";
-import arraySetCartesianProduct from "../utils/arraySetCartesianProduct.ts";
-import arraySetDifference from "../utils/arraySetDifference.ts";
-import arraySetIntersection from "../utils/arraySetIntersection.ts";
-import arraySetUnion from "../utils/arraySetUnion.ts";
-import IsArraySetPartOf from "../utils/isArraySetPartOf.ts";
-import powerSet from "../utils/powerSet.ts";
-import type  OrderedPair from "./OrderedPair.ts";
+import type { SetType } from "../model/index.ts";
+import { areArraySetsEqual, arraySetCartesianProduct, arraySetDifference, arraySetIntersection, arraySetUnion, IsArraySetPartOf, powerSet } from "../utils/index.ts";
+import type { OrderedPair } from "./index.ts";
 
-export default abstract class SetOperations {
+
+export abstract class SetOperations {
 
     static areSetsEqual<T>(a: SetType<T>, b : SetType<T>) : boolean {
         return areArraySetsEqual(a ,b)
@@ -34,7 +29,7 @@ export default abstract class SetOperations {
         return IsArraySetPartOf(a, b)
     }
 
-    static powerSet<T>(a: SetType<T>) : SetType<T>{
+    static powerSet<T>(a: SetType<T>) : SetType<T[]>{
         return powerSet(a)
     }
 }

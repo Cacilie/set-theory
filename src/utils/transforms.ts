@@ -1,5 +1,5 @@
+import { SetType } from "../model/index.ts";
 
-import  type { SetType } from "../model/SetType.ts";
 
 
 function recursiveTransformArrayToSet<AT, ST>(array_set : SetType<AT>) : Set<ST> {

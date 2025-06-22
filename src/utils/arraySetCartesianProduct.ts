@@ -1,7 +1,7 @@
-import OrderedPair from "../classes/OrderedPair.ts";
-import type { SetType } from "../model/SetType.ts";
+import { OrderedPair } from "../classes/index.ts";
+import type { SetType } from "../model/index.ts";
 
-export default function arraySetCartesianProduct<T>( setA : SetType<T>, setB : SetType<T> ) : OrderedPair<T>[] {
+export function arraySetCartesianProduct<T>( setA : SetType<T>, setB : SetType<T> ) : OrderedPair<T>[] {
 
     const cartesianProduct : OrderedPair<T>[] = []
 

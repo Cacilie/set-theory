@@ -1,5 +1,5 @@
 import { assertEquals } from "@std/assert/equals";
-import IsArraySetPartOf from "./isArraySetPartOf.ts";
+import { IsArraySetPartOf } from "./index.ts";
 
 Deno.test( " 1 is part of [1, 2]", () => {
     assertEquals(IsArraySetPartOf(1, [1, 2]), true);

@@ -1,7 +1,7 @@
 import { assertExists } from "@std/assert/exists";
-import OrderedPair from "./OrderedPair.ts";
 import { assertArrayIncludes } from "@std/assert/array-includes";
 import { assertEquals } from "@std/assert/equals";
+import { OrderedPair } from "./index.ts";
 
 Deno.test('OrderedPair should exist', () => {
     const op = new OrderedPair(1, 2);
