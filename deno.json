@@ -1,12 +1,16 @@
 {
   "name": "@discrete-math/set-theory",
-  "version": "0.0.4-alpha",
+  "version": "0.1.0",
+  "description": "TypeScript Set Theory Library",
+  "title": "TypeScript Set Theory Library",
+  "author": "E. A. Arroyo",
   "license": "MIT",
   "exports": {
     ".": "./src/index.ts"
   },
   "tasks": {
-    "dev": "deno run --watch main.ts"
+    "dev": "deno run --watch main.ts",
+    "test": "deno test --coverage"
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@1"

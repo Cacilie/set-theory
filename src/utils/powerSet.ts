@@ -1,26 +1,25 @@
-// deno-lint-ignore-file
+import type { SetType } from "../model/index.ts";
+import { IsArraySetPartOf } from "./index.ts";
 
-import arrayToSet from "./utils.ts";
 
-// deno-lint-ignore no-explicit-any
-export default function powerSet(set: Set<any>): Set<any> {
+export function powerSet<T>(set: SetType<T>): SetType<T[]> {
 
-    let solution: any[] = [];
+    const solution :  Array<T[]> = []
 
-    solution.push([null])
+    solution.push([])
 
-    set.forEach(pivot => {
+    set.forEach((pivot) => {
         solution.forEach(member => {
-            let copy = member[0];
-            let tmp = [];
-            if (copy) tmp.push(copy);
+            const copy = (member as Array<T> )
+            let tmp : T[] = [];
+            if (copy.length > 0) tmp = [...copy]
             tmp.push(pivot);
-            solution.push(tmp);
+            if(!IsArraySetPartOf<T[]>(tmp, solution)) solution.push(tmp);
         })
     })
 
     
 
-    return arrayToSet(solution);
+    return solution;
 }
 

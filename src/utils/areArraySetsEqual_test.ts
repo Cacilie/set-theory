@@ -1,5 +1,5 @@
 import { assertEquals } from "@std/assert/equals";
-import areArraySetsEqual from "./areArraySetsEqual.ts";
+import { areArraySetsEqual } from "./index.ts";
 
 Deno.test( "[1, 2] is equal to [1,2]", () => {
     const a = [1, 2]
@@ -45,7 +45,7 @@ Deno.test( "[ [1, [2 , [3] ]], 1, 2 ]  is equal to [ 1, 2, [1, [2 , [3] ]] ]", (
 Deno.test(" [[4]] is not equal to  [ [ [4] ] ]  ", () => {
     const a = [[4]];
     const b = [ [ [4] ] ];
-    assertEquals( areArraySetsEqual(a,b), false )
+    assertEquals( areArraySetsEqual<number | number[] | number[][]>(a,b), false )
 })
 
 

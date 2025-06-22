@@ -1,7 +1,8 @@
-import isPartOf from "./isPartOf.ts";
+import type { SetType } from "../model/index.ts";
+import { IsArraySetPartOf } from "./index.ts";
 
-export default function arraySetDifference(A : Array<unknown>, B : Array<unknown>) : Array<unknown>{
+export function arraySetDifference<T>(A : SetType<T>, B : SetType<T>) : SetType<T>{
     return A.filter( member => {
-        if(!isPartOf(member, B)) return member;
+        if(!IsArraySetPartOf(member, B)) return member;
     })
 }
