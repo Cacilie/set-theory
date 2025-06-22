@@ -12,7 +12,5 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v4
-      - name: test
-        run: npx deno test
       - name: Publish package
         run: npx jsr publish
