@@ -26,7 +26,7 @@ export class OrderedPair<T> {
         return this.second
     }
     
-    print(){
+    print() : string {
         return `(${this.first}, ${this.second})`
     }
 
