@@ -14,7 +14,7 @@ export class OrderedPair<T> {
     }
 
 
-    getValues(){
+    getValues() : readonly (T | T[])[] {
         return Object.freeze([this.first, this.second])
     }
 
