@@ -21,7 +21,7 @@
 - Adds arraySetDifference
 
 
-#  "version": "0.0.5-alpha"
+#  "version": "0.1.0"
 - Update Readme
 - SetOperations abstract class with all the utils implemented
 - Test Coverage up to 100%
