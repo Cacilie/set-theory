@@ -3,6 +3,9 @@ import { areArraySetsEqual, arraySetCartesianProduct, arraySetDifference, arrayS
 import type { OrderedPair } from "./index.ts";
 
 
+/**
+ * An abstract class that provides static utility methods for performing fundamental set theory operations.
+ */
 export abstract class SetOperations {
 
     /**
