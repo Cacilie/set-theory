@@ -38,3 +38,8 @@
 - Added documentation to `SetOperations` class methods.
 - Added documentation to `SetOf` class members and methods.
 - Added documentation to `OrderedPair` class members and methods.
+
+
+#  "version": "0.1.2"
+- Added class-level JSDoc documentation to `SetOperations`.
+- Added JSDoc documentation to `SetType` type alias.
