@@ -32,3 +32,9 @@
 - Use of generic types.
 - new types exported.
 - new class ordered pair exported.
+
+
+#  "version": "0.1.1"
+- Added documentation to `SetOperations` class methods.
+- Added documentation to `SetOf` class members and methods.
+- Added documentation to `OrderedPair` class members and methods.
